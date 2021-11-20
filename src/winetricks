@@ -5567,7 +5567,8 @@ winetricks_wine_setup()
         return
     fi
 
-    winetricks_latest_version_check
+    # Disable self version check
+    # winetricks_latest_version_check
 
     # Overridden for windows
     W_ISO_MOUNT_ROOT=/mnt/winetricks
