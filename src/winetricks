@@ -11349,7 +11349,7 @@ load_msls31()
     fi
 
     if test -f  "${W_CACHE}"/msls31/INSTMSIW.EXE; then
-        w_try mv  "${W_CACHE}"/msls31/INSTMSIW.EXE "${W_CACHE}"/msls31/InstMsiW.EXE
+        w_try mv  "${W_CACHE}"/msls31/INSTMSIW.EXE "${W_CACHE}"/msls31/InstMsiW.exe
     fi
 
     w_try_cabextract --directory="${W_TMP}" "${W_CACHE}"/msls31/InstMsiW.exe
