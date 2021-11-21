@@ -22307,6 +22307,48 @@ load_youdaonote()
 
 }
 
+#----------------------------------------------------------------
+
+w_metadata cs16 games \
+ title="Counter-Strike 1.6" \
+ publisher="Mairuan.com" \
+ year="2012" \
+ media="download" \
+ file1="Counter-Strike%201.6-original.exe" \
+ installed_exe1="C:/Games/CS 1.6 Original/hl.exe" \
+ homepage="https://www.mairuan.com" \
+ unattended="no"
+
+load_cs16()
+{
+    w_package_unsupported_win64
+
+    w_download https://www.cybersports.lt/Counter-Strike%201.6-original.exe bfe45202c93ca118f4fef8c0751230fbe6e4929b99ad6396752f5975109e9f16
+
+    w_try_cd "$W_CACHE/$W_PACKAGE"
+    w_try "$WINE" "$file1"
+
+#    case ${LANG} in
+#        zh_CN*)
+#            cat > "${W_TMP}"/cs-cn.reg <<_EOF_
+#REGEDIT4
+#
+#[HKEY_CURRENT_USER\\Software\\Valve]
+#
+#[HKEY_CURRENT_USER\\Software\\Valve\Half-Life]
+#
+#[HKEY_CURRENT_USER\\Software\\Valve\\Half-Life\\Settings]
+#
+#[HKEY_CURRENT_USER\\Software\\Valve\\Steam]
+#"Language"="schinese"
+#_EOF_
+#            w_try_regedit "${W_TMP}"\\cs-cn.reg
+#             ;;
+#        *)
+#             ;;
+#    esac
+#w_declare_exe "C:\\Games\\CS 1.6 Original" hl.exe -steam -game cstrike -appid 10 -noipx -nojoy -noforcemspd -noforcemparms -noforcemaccel
+}
 
 #######################
 # settings
